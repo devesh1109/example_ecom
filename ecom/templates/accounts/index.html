@@ -1,0 +1,14 @@
+{% extends 'accounts/base.html' %}
+{% block active_nav %}
+          <a class="nav-link active" href="{% url 'index' %}">Home</a>
+          <a class="nav-link " href="{% url 'register' %}" >Sign Up</a>
+          <a class="nav-link " href="{% url 'signin' %}">Login</a>
+          {% endblock %}
+{% block content %}
+<div class="container">
+        {% if registered %}
+        <h1 class="h1">Registration Complete.</h1>
+        {% endif %}
+</div>
+
+{% endblock %}

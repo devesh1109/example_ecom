@@ -1,0 +1,29 @@
+{% extends 'accounts/base.html' %}
+{% block active_nav %}
+          <a class="nav-link " href="{% url 'index' %}">Home</a>
+          <a class="nav-link active" href="{% url 'register' %}" >Sign Up</a>
+          <a class="nav-link" href="{% url 'signin' %}">Login</a>
+          {% endblock %}
+{% block content %}
+
+<div class="container rounded-top" >
+    <div class="jumbotron bg-info">
+            <h1 class="h1">Sign Up</h1>
+            <small class='mute-text mx-auto '>It's free and always will be.</small>
+            <hr>
+        <form method="POST" enctype="multipart/form-data">
+            
+        {% csrf_token %}
+            {{ user_form.as_p }}
+            {{ user_pic.as_p }}
+        <input type="submit" class = "btn btn-primary" value ="submit">         
+        </form>
+        
+</div>
+</div>
+<p class="small">{{ error1 }}</p>
+            <p class="small">{{ error2 }}</p>
+
+{% endblock %}
+
+

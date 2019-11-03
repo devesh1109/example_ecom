@@ -1,0 +1,16 @@
+{% extends 'accounts/base.html' %}
+{% block active_nav %}
+{% if user.is_authenticated %}
+          <a class="nav-link active" href="{% url 'user_logout' %}">Log Out</a>
+          {% endif %}
+          {% endblock %}
+{% block content %}
+<div class="container">
+        {% if user.is_authenticated %}
+        <h1 class="h1">Logged In.</h1>
+        
+{% endif %}
+
+</div>
+
+{% endblock %}
